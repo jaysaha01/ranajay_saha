@@ -39,10 +39,10 @@ const Projectcard: React.FC<ProjectProps> = ({ mydata }) => {
         <div className="infone">
           <AvatarGroup spacing="medium" >
             {
-              mydata.images.map((elm)=>{
+              mydata.images.map((elm,i)=>{
                 return(
                   
-                  <Avatar alt="Remy Sharp" src={elm} sx={{backgroundColor:"#4b4269"}}/>
+                  <Avatar alt="Remy Sharp" src={elm} sx={{backgroundColor:"#4b4269"}} key={i+"keys"}/>
                  
                 )
               })
