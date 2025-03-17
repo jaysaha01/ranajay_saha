@@ -8,7 +8,7 @@ import { urlFor } from "@/sanity/lib/image";
 
 interface BlogInterface {
   _id: string;
-  content?: any;
+  content?: unknown;
   description: string;
   title: string;
   image?: { asset: { _ref: string } };

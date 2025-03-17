@@ -9,7 +9,7 @@ import { useParams } from "next/navigation";
 const Page = () => {
   interface BlogInterface {
     _id: string;
-    content?: any;
+    content?: unknown;
     description: string;
     title: string;
     image?: { asset: { _ref: string } };
