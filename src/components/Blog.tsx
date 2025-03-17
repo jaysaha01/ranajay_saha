@@ -1,5 +1,6 @@
 "use client";
 import { Box, Container, Typography } from "@mui/material";
+import { TypedObject } from "@portabletext/types";
 import Grid from "@mui/material/Grid2";
 import React, { useEffect, useState } from "react";
 import Blogcard from "./Blogcard";
@@ -10,7 +11,7 @@ import Cardloading from "./Cardloading";
 // Define the TypeScript interface for blog data
 interface BlogInterface {
     _id: string;
-    content?: unknown; 
+    content?: TypedObject[]; // ✅ Ensure it's the same everywhere
     description: string;
     title: string;
     image?: { asset: { _ref: string } };

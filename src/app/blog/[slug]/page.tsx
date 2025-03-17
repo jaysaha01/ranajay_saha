@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { TypedObject } from "@portabletext/types";
 import Blogdetails from "@/components/Blogdetails";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
@@ -9,7 +10,7 @@ import { useParams } from "next/navigation";
 const Page = () => {
   interface BlogInterface {
     _id: string;
-    content?: unknown;
+    content?: TypedObject[]; // ✅ Ensure it's the same everywhere
     description: string;
     title: string;
     image?: { asset: { _ref: string } };

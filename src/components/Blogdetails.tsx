@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { TypedObject } from '@portabletext/types';
 import { Box, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { PortableText } from "@portabletext/react";
@@ -10,7 +11,7 @@ import Link from "next/link";
 
 interface BlogInterface {
   _id: string;
-  content?: unknown;
+  content?: TypedObject[];  
   description: string;
   title: string;
   image?: { asset: { _ref: string } };
@@ -52,7 +53,7 @@ const Blogdetails: React.FC<ProjectProps> = ({ myblogs = [], slug }) => {
                   <img src={imageUrl} alt={blog.title} />
                 </div>
                 <Typography variant="h6">{blog.description}</Typography>
-                <PortableText value={blog.content} />
+                <PortableText value={blog.content ?? []} />
               </div>
             </Grid>
             <Grid item xs={12} md={4}>

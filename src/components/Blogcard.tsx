@@ -1,5 +1,6 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
+import { TypedObject } from "@portabletext/types";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
@@ -8,7 +9,7 @@ import { urlFor } from "@/sanity/lib/image";
 
 interface BlogInterface {
   _id: string;
-  content?: unknown;
+  content?: TypedObject[]; // ✅ Ensure it's the same everywhere
   description: string;
   title: string;
   image?: { asset: { _ref: string } };
