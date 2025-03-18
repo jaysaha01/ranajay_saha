@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useEffect } from "react";
 import { TypedObject } from '@portabletext/types';
 import { Box, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
