@@ -19,7 +19,7 @@ const Page = () => {
 
   const [blogs, setMyblogs] = useState<BlogInterface[]>([]);
   const params = useParams(); // Get URL parameters
-  const slug = params?.slug as string; // ✅ Ensure slug is always a string
+  const slug = params?.slug as string; 
 
   async function fetchBlog() {
     try {

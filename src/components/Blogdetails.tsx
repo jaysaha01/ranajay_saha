@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { TypedObject } from '@portabletext/types';
 import { Box, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
@@ -19,24 +19,26 @@ interface BlogInterface {
 }
 
 interface ProjectProps {
-  myblogs?: BlogInterface[]; // ✅ Prevent undefined errors
+  myblogs?: BlogInterface[]; 
   slug: string;
 }
 
+
 const Blogdetails: React.FC<ProjectProps> = ({ myblogs = [], slug }) => {
+
   if (!myblogs || myblogs.length === 0) {
-    return <h2>Loading blogs...</h2>; // ✅ Show a loading message instead of breaking
+    return <h2>Loading blogs...</h2>; 
   }
 
   const blog = myblogs.find((b) => b.slug.current === slug);
 
   if (!blog) {
-    return <h2>Blog not found</h2>; // ✅ Prevent crashes if the blog is missing
+    return <h2>Blog not found</h2>; 
   }
 
   const imageUrl = blog.image?.asset?._ref
     ? urlFor(blog.image.asset._ref).width(800).height(500).url()
-    : "/default-image.jpg"; // ✅ Fallback image
+    : "/default-image.jpg"; 
 
   return (
     <div className="blogbx">

@@ -388,7 +388,8 @@ $cursive-font: "Anton", sans-serif;
 }
 
 .footer {
-  background-image: url("../../public/bg.jpg");
+  background: url("../../public/bg.jpg"), rgb(23 25 35);
+  background-blend-mode: exclusion;
   padding: 20px;
   padding-top: 40px;
   border-top: 1px solid $gray;
@@ -662,9 +663,6 @@ a {
 }
 
 @media screen and (max-width: 396px) {
-  .brodyrapper .aboutsection .aboutone .imgone {
-    width: 84%;
-  }
 
   .brodyrapper .aboutsection .aboutone .imgtwo {
     width: 72%;
@@ -684,3 +682,28 @@ a {
     flex-direction: column;
   }
 }
+
+//Not Found Page
+.page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: "Arvo", serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .four_zero_four_bg {
+    background-image: url("https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif");
+    height: 400px;
+    background-position: center;
+  }
+  
+}
+
+
+
+
+
+
+
