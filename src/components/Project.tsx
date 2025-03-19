@@ -15,8 +15,22 @@ interface Projectintrface {
 }
 
 const projectDb: Projectintrface[] = [
+
   {
     id: 0,
+    name: "Book Store",
+    description:
+      "I built a responsive bookstore website using React, React Bootstrap, and SCSS. It features a dynamic book catalog, search functionality, category filters, and a user-friendly interface. Styled with SCSS for a modern look, it ensures a seamless browsing experience across devices.",
+    thumbnil: "https://blog.kotobee.com/wp-content/uploads/2023/11/library-Blog-Size.jpg",
+    images: [
+      "https://icon.icepanel.io/Technology/svg/React.svg",
+      "https://icon.icepanel.io/Technology/svg/Sass.svg",
+      "https://icon.icepanel.io/Technology/svg/React-Bootstrap.svg"
+    ],
+    link: "https://github.com/jaysaha01/book-store",
+  },
+  {
+    id: 1,
     name: "Suruchi Sangha",
     description:
       "I redesigned the landing page for Suruchi Sangha, a traditional Puja club, to create a modern, visually appealing, and user-friendly website. The goal was to enhance the user experience while maintaining the cultural and spiritual essence of the organization.",
@@ -29,7 +43,7 @@ const projectDb: Projectintrface[] = [
     link: "https://jaysaha01.github.io/suruchisangha_landingpage/",
   },
   {
-    id: 1,
+    id: 2,
     name: "Ayelet Montessori House of Children",
     description:
       "Ayelet Montessori is a nurturing House of Children founded by passionate parents and educators who deeply believe in the transformative power of **Dr. Maria Montessori.",
@@ -42,7 +56,7 @@ const projectDb: Projectintrface[] = [
     link: "https://ayeletmontessori.com/",
   },
   {
-    id: 2,
+    id: 3,
     name: "Marko & Brando",
     description:
       "Marko & Brando, a Kolkata-based digital marketing firm since 2017, drives online success with tailored strategies. From SEO to social media, we innovate to elevate your brand. Let’s achieve remarkable results together!",
@@ -55,7 +69,7 @@ const projectDb: Projectintrface[] = [
     link: "https://www.markobrando.com/",
   },
   {
-    id: 3,
+    id: 4,
     name: "Niavara",
     description:
       "Experience ultra-luxe living at Kolkata’s tallest luxury condominium. Sky-kissing balconies, 3-side open apartments, and global standards redefine elegance. Elevate your lifestyle with unmatched comfort and sophistication.",
@@ -68,7 +82,7 @@ const projectDb: Projectintrface[] = [
     link: "https://jaysaha01.github.io/niavara/",
   },
   {
-    id: 4,
+    id: 5,
     name: "Orbit Tarang",
     description:
       "Homexperts, with years of real estate excellence in Kolkata, transforms dreams into reality. Our expert team understands local markets, trends, and unique needs, crafting your perfect home with care and precision.",
@@ -81,7 +95,7 @@ const projectDb: Projectintrface[] = [
     link: "https://jaysaha01.github.io/niavara/",
   },
   {
-    id: 5,
+    id: 6,
     name: "Getafix Solutions",
     description:
       "Getafix Solutions delivers unmatched construction services with a focus on timely, budget-friendly projects. A trendsetter in project management, we prioritize customer delight and excellence, setting new industry standards.",
