@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -6,8 +8,20 @@ import Box from "@mui/material/Box";
 import Image from "next/image";
 import mybigimg from "../../public/mebig.jpg";
 import * as motion from "motion/react-client";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: false, // Animation repeats every time element comes into view
+    });
+  }, []);
+
+
   return (
     <div className="aboutsection" id="about">
       <div className="aboutdetils">
@@ -15,7 +29,7 @@ const About = () => {
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
               <Grid size={{ xs: 12, md: 6 }}>
-                <div className="aboutone">
+                <div className="aboutone" data-aos="fade-right">
                   <div className="imgone">
                     <Image
                       src={mybigimg}
@@ -27,7 +41,7 @@ const About = () => {
                 </div>
               </Grid>
               <Grid size={{ xs: 12, md: 6 }}>
-                <div className="abouttwo">
+                <div className="abouttwo" data-aos="fade-left">
                   <Typography variant="h4" gutterBottom>
                     About Me
                   </Typography>

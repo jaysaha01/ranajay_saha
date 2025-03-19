@@ -75,16 +75,70 @@ $cursive-font: "Anton", sans-serif;
 
   .banner {
     .bannercontainer {
+
+      //New code added
+
+      
       padding-top: 11%;
       padding-bottom: 10%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: url("../../public/mybg.png");
+      background: url("../../public/mybg2.png");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      position: relative;
+
+      .icon {
+        position: absolute;
+        
+      }
+
+      .icon1 {
+        left: 14%;
+        animation: bounce 4s infinite;
+      }
+
+      .icon2 {
+        left: 18%;
+        top: 21%;
+        animation: bounce 3s infinite;
+      }
+
+      .icon3 {
+        left: 11%;
+        top: 28%;
+        animation: bounce 5s infinite;
+      }
+
+      .icon4 {
+        right: 17%;
+        animation: bounce 4s infinite;
+      }
+
+      .icon5 {
+        right: 16%;
+        top: 21%;
+        animation: bounce 5s infinite;
+      }
+
+      .icon6 {
+        right: 11%;
+        top: 28%;
+        animation: bounce 3s infinite;
+      }
+
+      .icon7 {
+        right: 36%;
+        top: 29%;
+        animation: bounce 7s infinite;
+
+        img {
+          width: 40px;
+        }
+      }
 
       .profileimg {
         border: 2px solid #00f;
@@ -129,9 +183,24 @@ $cursive-font: "Anton", sans-serif;
     }
   }
 
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   // About Section ================================
 
   .aboutsection {
+    overflow: hidden;
     .aboutone {
       height: 100vh;
 
@@ -306,6 +375,8 @@ $cursive-font: "Anton", sans-serif;
 
   .contatsection {
     padding-bottom: 3rem;
+    overflow: hidden;
+
     .contactbx {
       .icontext {
         display: flex;
@@ -424,7 +495,6 @@ $cursive-font: "Anton", sans-serif;
   }
 
   .blogcontent {
-
     padding: 0px;
     padding-top: 30px;
 
@@ -434,6 +504,7 @@ $cursive-font: "Anton", sans-serif;
       line-height: 25px;
       margin-bottom: 18px;
     }
+
     p {
       color: $gray;
     }
@@ -663,7 +734,6 @@ a {
 }
 
 @media screen and (max-width: 396px) {
-
   .brodyrapper .aboutsection .aboutone .imgtwo {
     width: 72%;
   }
@@ -683,6 +753,96 @@ a {
   }
 }
 
+//New code added
+@media screen and (max-width: 1349px) {
+  .brodyrapper .banner .bannercontainer .icon1 {
+
+    img {
+      width: 61%;
+    }
+  }
+
+  .brodyrapper .banner .bannercontainer .icon2 {
+    img {
+      width: 57%;
+    }
+  }
+
+  .brodyrapper .banner .bannercontainer .icon3 {
+    img {
+      width: 57%;
+    }
+  }
+
+  .brodyrapper .banner .bannercontainer .icon4 {
+    right: 13%;
+
+    img {
+      width: 64%;
+    }
+  }
+
+  .brodyrapper .banner .bannercontainer .icon5 {
+    right: 13%;
+
+    img {
+      width: 56%;
+    }
+  }
+
+  .brodyrapper .banner .bannercontainer .icon6 {
+    img {
+      width: 56%;
+    }
+  }
+
+  .brodyrapper .banner .bannercontainer .icon7 {
+    img {
+      width: 40%;
+    }
+  }
+
+}
+
+@media screen and (max-width: 972px) {
+  .brodyrapper .banner .bannercontainer .icon1 {
+    left: 6%;
+  }
+
+  .brodyrapper .banner .bannercontainer .icon2 {
+    left: 12%;
+    top: 24%;
+  }
+
+  .brodyrapper .banner .bannercontainer .icon3 {
+    left: 6%;
+    top: 28%;
+  }
+
+  .brodyrapper .banner .bannercontainer .icon4 {
+    right: 0%;
+  }
+
+  .brodyrapper .banner .bannercontainer .icon5 {
+    right: 5%;
+  }
+
+  .brodyrapper .banner .bannercontainer .icon6 {
+    right: 2%;
+    top: 28%;
+  }
+
+}
+
+@media screen and (max-width: 972px) {
+  .brodyrapper .banner .bannercontainer .icon {
+    display: none;
+  }
+}
+
+//New code added
+
+
 //Not Found Page
 .page_404 {
   padding: 40px 0;
@@ -698,12 +858,4 @@ a {
     height: 400px;
     background-position: center;
   }
-  
 }
-
-
-
-
-
-
-
