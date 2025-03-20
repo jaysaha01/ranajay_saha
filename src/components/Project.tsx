@@ -34,7 +34,7 @@ const projectDb: Projectintrface[] = [
     name: "Suruchi Sangha",
     description:
       "I redesigned the landing page for Suruchi Sangha, a traditional Puja club, to create a modern, visually appealing, and user-friendly website. The goal was to enhance the user experience while maintaining the cultural and spiritual essence of the organization.",
-    thumbnil: "https://lh3.googleusercontent.com/p/AF1QipNBg45vj6zzDugWA3A-QUVOGCgEwjZSmXFBHRpP=s680-w680-h510",
+    thumbnil: "https://upload.wikimedia.org/wikipedia/commons/d/da/Suruchi_Sangha_Durga_Puja_2019.jpg",
     images: [
       "https://icon.icepanel.io/Technology/svg/HTML5.svg",
       "https://icon.icepanel.io/Technology/svg/Sass.svg",

@@ -15,6 +15,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Link from "next/link";
 
 
 interface Props {
@@ -84,12 +85,12 @@ export default function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item,i) => (
-              <a href={item == "Home" ? "/" : item == "About" ? "#about" : item == "Skills" ?"#skills" : item =="Projects" ? "#projects" : item == "Blog" ? "#blogs" : item == "Contact" ? "#contact" :"" } key={i+"infdfd"}>
+              <Link href={item == "Home" ? "/"+"#home" : item == "About" ? "/"+"#about" : item === "Skills" ?"/"+"#skills" : item =="Projects" ? "/"+"#projects" : item === "Blog" ? "/" + "#blogs" : item == "Contact" ? "/#contact" :"" } key={i+"infdfd"}>
                 <Button key={item} sx={{ color: "#fff" }}>
                   {item}
                 </Button>
 
-              </a>
+              </Link>
 
             ))}
           </Box>
