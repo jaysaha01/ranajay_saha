@@ -292,7 +292,16 @@ $cursive-font: "Anton", sans-serif;
       justify-content: space-around;
       gap: 30px;
       border-radius: 10px;
-      height: 320px;
+      
+      .iconbx{
+        height: 50px;
+        width: 50px;
+        margin-bottom: 20px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
 
       h5 {
         padding-top: 0px;

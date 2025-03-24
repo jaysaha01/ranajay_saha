@@ -12,8 +12,6 @@ interface SblogcardProps {
   blog: BlogInterface;
 }
 
-
-
 const Sblogcard: React.FC<SblogcardProps> = ({ blog }) => {
 
     const imageUrl = blog.image?.asset?._ref

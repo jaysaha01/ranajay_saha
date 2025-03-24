@@ -1,115 +1,40 @@
 "use client"
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Projectcard from "./Projectcard";
+import { client } from "@/sanity/lib/client";
+import { groq } from "next-sanity";
 
 interface Projectintrface {
   id: number;
-  name: string;
+  title: string;
   description: string;
-  thumbnil: string;
-  images: string[];
+  image: string;
+  skills: string[];
   link: string;
 }
 
-const projectDb: Projectintrface[] = [
-
-  {
-    id: 0,
-    name: "Book Store",
-    description:
-      "I built a responsive bookstore website using React, React Bootstrap, and SCSS. It features a dynamic book catalog, search functionality, category filters, and a user-friendly interface. Styled with SCSS for a modern look, it ensures a seamless browsing experience across devices.",
-    thumbnil: "https://blog.kotobee.com/wp-content/uploads/2023/11/library-Blog-Size.jpg",
-    images: [
-      "https://icon.icepanel.io/Technology/svg/React.svg",
-      "https://icon.icepanel.io/Technology/svg/Sass.svg",
-      "https://icon.icepanel.io/Technology/svg/React-Bootstrap.svg"
-    ],
-    link: "https://github.com/jaysaha01/book-store",
-  },
-  {
-    id: 1,
-    name: "Suruchi Sangha",
-    description:
-      "I redesigned the landing page for Suruchi Sangha, a traditional Puja club, to create a modern, visually appealing, and user-friendly website. The goal was to enhance the user experience while maintaining the cultural and spiritual essence of the organization.",
-    thumbnil: "https://upload.wikimedia.org/wikipedia/commons/d/da/Suruchi_Sangha_Durga_Puja_2019.jpg",
-    images: [
-      "https://icon.icepanel.io/Technology/svg/HTML5.svg",
-      "https://icon.icepanel.io/Technology/svg/Sass.svg",
-      "https://icon.icepanel.io/Technology/svg/jQuery.svg",
-    ],
-    link: "https://jaysaha01.github.io/suruchisangha_landingpage/",
-  },
-  {
-    id: 2,
-    name: "Ayelet Montessori House of Children",
-    description:
-      "Ayelet Montessori is a nurturing House of Children founded by passionate parents and educators who deeply believe in the transformative power of **Dr. Maria Montessori.",
-    thumbnil: "https://ayeletmontessori.com/img/topban.jpg",
-    images: [
-      "https://icon.icepanel.io/Technology/svg/HTML5.svg",
-      "https://icon.icepanel.io/Technology/svg/Sass.svg",
-      "https://icon.icepanel.io/Technology/svg/jQuery.svg",
-    ],
-    link: "https://ayeletmontessori.com/",
-  },
-  {
-    id: 3,
-    name: "Marko & Brando",
-    description:
-      "Marko & Brando, a Kolkata-based digital marketing firm since 2017, drives online success with tailored strategies. From SEO to social media, we innovate to elevate your brand. Let’s achieve remarkable results together!",
-    thumbnil: "https://www.markobrando.com/asset/image/whitmail4.webp",
-    images: [
-      "https://icon.icepanel.io/Technology/svg/HTML5.svg",
-      "https://icon.icepanel.io/Technology/svg/Sass.svg",
-      "https://icon.icepanel.io/Technology/svg/jQuery.svg",
-    ],
-    link: "https://www.markobrando.com/",
-  },
-  {
-    id: 4,
-    name: "Niavara",
-    description:
-      "Experience ultra-luxe living at Kolkata’s tallest luxury condominium. Sky-kissing balconies, 3-side open apartments, and global standards redefine elegance. Elevate your lifestyle with unmatched comfort and sophistication.",
-    thumbnil: "https://jaysaha01.github.io/niavara/img/abutus.jpg",
-    images: [
-      "https://icon.icepanel.io/Technology/svg/HTML5.svg",
-      "https://icon.icepanel.io/Technology/svg/Sass.svg",
-      "https://icon.icepanel.io/Technology/svg/jQuery.svg",
-    ],
-    link: "https://jaysaha01.github.io/niavara/",
-  },
-  {
-    id: 5,
-    name: "Orbit Tarang",
-    description:
-      "Homexperts, with years of real estate excellence in Kolkata, transforms dreams into reality. Our expert team understands local markets, trends, and unique needs, crafting your perfect home with care and precision.",
-    thumbnil: "https://jaysaha01.github.io/orbittarang/img/gal14.png",
-    images: [
-      "https://icon.icepanel.io/Technology/svg/HTML5.svg",
-      "https://icon.icepanel.io/Technology/svg/Sass.svg",
-      "https://icon.icepanel.io/Technology/svg/jQuery.svg",
-    ],
-    link: "https://jaysaha01.github.io/niavara/",
-  },
-  {
-    id: 6,
-    name: "Getafix Solutions",
-    description:
-      "Getafix Solutions delivers unmatched construction services with a focus on timely, budget-friendly projects. A trendsetter in project management, we prioritize customer delight and excellence, setting new industry standards.",
-    thumbnil: "https://jaysaha01.github.io/getafix-solutions/images/home%20img/gthateen.jpg",
-    images: [
-      "https://icon.icepanel.io/Technology/svg/HTML5.svg",
-      "https://icon.icepanel.io/Technology/svg/Sass.svg",
-      "https://icon.icepanel.io/Technology/svg/jQuery.svg",
-    ],
-    link: "https://jaysaha01.github.io/getafix-solutions/",
-  }
-];
 
 const Project = () => {
+
+   const [mySkills, setMySkills] = useState<Projectintrface[] | []>([]);
+  
+    async function fetchProject() {
+      try {
+        const myProjects = await client.fetch(groq`*[_type=="myproject"]`);
+        setMySkills(myProjects)
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    }
+  
+    useEffect(() => {
+      fetchProject();
+    }, []);
+
+
   return (
     <div className="projectsection" id="projects">
       <div className="heading" style={{ paddingTop: "9%" }}>
@@ -122,8 +47,8 @@ const Project = () => {
         <Container>
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
-              {projectDb.map((elm) => (
-                <Grid size={{ xs: 12, md: 4 }} key={elm?.id}>
+              {mySkills.map((elm) => (
+                <Grid size={{ xs: 12, md: 4 }} key={elm?.id+"project"}>
                   <Projectcard mydata={elm} />
                 </Grid>
               ))}

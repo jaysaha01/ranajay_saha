@@ -12,8 +12,8 @@ const Banner = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: false, // Ensures animation happens only once
+      duration: 1000, 
+      once: false,
     });
   }, []);
 

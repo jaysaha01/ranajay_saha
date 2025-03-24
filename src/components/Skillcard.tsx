@@ -3,23 +3,25 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { IconType } from "react-icons";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { urlFor } from "@/sanity/lib/image";
 
- interface Skillintrface {
-    id: number;
-    logo: IconType;
-    name: string;
-    description: string;
-  }
+interface SkillInterface {
+  id: string;
+  description: string;
+  title: string;
+  image?: { asset: { _ref: string } };
+}
 
 interface SkillsProps {
-  mydata: Skillintrface;
+  mydata: SkillInterface;
 }
 
 const Skillcard: React.FC<SkillsProps> = ({ mydata }) => {
+
+  const { title, description, image } = mydata;
 
   useEffect(() => {
       AOS.init({
@@ -27,6 +29,12 @@ const Skillcard: React.FC<SkillsProps> = ({ mydata }) => {
         once: false, // Animation repeats every time element comes into view
       });
     }, []);
+
+   const imageUrl = image?.asset?._ref
+       ? urlFor(image.asset._ref).width(300).height(300).url()
+       : "/default-image.jpg"; 
+
+    
 
   return (
     <div
@@ -39,13 +47,13 @@ const Skillcard: React.FC<SkillsProps> = ({ mydata }) => {
       <Card sx={{ minWidth: 275 }} className="skillcard" data-aos="fade-up">
         <CardContent>
           <div className="iconbx">
-            {<mydata.logo/>}
+            <img src={imageUrl}/>
           </div>
 
-          <Typography variant="h5">{mydata.name}</Typography>
+          <Typography variant="h5">{title}</Typography>
           <Typography variant="body1">
             {
-              mydata.description
+              description.slice(0,100) + "..."
             }
           </Typography>
         </CardContent>

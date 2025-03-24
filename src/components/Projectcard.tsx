@@ -9,10 +9,10 @@ import "aos/dist/aos.css";
 
 interface Projectintrface {
   id: number;
-  name: string;
+  title: string;
   description: string;
-  thumbnil: string;
-  images: string[];
+  image: string;
+  skills: string[];
   link: string;
 }
 
@@ -31,12 +31,12 @@ const Projectcard: React.FC<ProjectProps> = ({ mydata }) => {
   return (
     <div className="projectcard" data-aos="fade-up">
       <div className="imgplaceholder">
-        <img src={mydata.thumbnil} alt="" />
+        <img src={mydata.image} alt="" />
       </div>
 
       <div className="infoproject">
         <Typography variant="h6" gutterBottom>
-          {mydata.name}
+          {mydata.title}
         </Typography>
         <Typography variant="body1" gutterBottom>
           {mydata.description}
@@ -46,7 +46,7 @@ const Projectcard: React.FC<ProjectProps> = ({ mydata }) => {
       <div className="navigateinfo">
         <div className="infone">
           <AvatarGroup spacing="medium">
-            {mydata.images.map((elm, i) => {
+            {mydata.skills.map((elm, i) => {
               return (
                 <Avatar
                   alt="Remy Sharp"

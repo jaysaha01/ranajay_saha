@@ -8,10 +8,10 @@ import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import Cardloading from "./Cardloading";
 
-// Define the TypeScript interface for blog data
+
 interface BlogInterface {
     _id: string;
-    content?: TypedObject[]; // ✅ Ensure it's the same everywhere
+    content?: TypedObject[]; 
     description: string;
     title: string;
     image?: { asset: { _ref: string } };

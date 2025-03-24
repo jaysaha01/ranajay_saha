@@ -37,7 +37,7 @@ const Blogcard: React.FC<ProjectProps> = ({ blog }) => {
 
   const imageUrl = image?.asset?._ref
     ? urlFor(image.asset._ref).width(300).height(300).url()
-    : "/default-image.jpg"; // Provide a fallback image
+    : "/default-image.jpg"; 
 
   return (
     <Link href={`/blog/${slug.current}`} data-aos="fade-up">
