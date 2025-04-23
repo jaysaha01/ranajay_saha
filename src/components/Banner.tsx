@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import Grid from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
-import mybigimg from "../../public/me.jpg";
+import mybigimg from "../../public/me.png";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";

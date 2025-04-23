@@ -106,7 +106,7 @@ const About = () => {
                       </div>
                     </div>
                   </div>
-                  <a href="./Frontend Designer - Ranajaya Saha.pdf" target="_blank">
+                  <a href="./Ranajay Saha.pdf" target="_blank">
                     <motion.button className="mybtn" whileTap={{ scale: 0.8 }}>
                       Download CV
                     </motion.button>
