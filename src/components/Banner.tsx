@@ -39,12 +39,13 @@ const Banner = () => {
               <div className="icon icon5"><img src="./jsicon.png"/></div>
               <div className="icon icon6"><img src="./nicon2.png"/></div>
               <div className="icon icon7"><img src="./nicon3.png"/></div>
-              <div className="profileimg">
+              <div className="profileimg" style={{visibility:"hidden"}}>
                 <Image
                   src={mybigimg}
                   width={500}
                   height={500}
                   alt="Picture of the author"
+
                 />
               </div>
               <h1>Ranajay Saha</h1>
