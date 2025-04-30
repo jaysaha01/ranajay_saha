@@ -90,18 +90,18 @@ const About = () => {
                       </div>
                       <div className="infobx">
                         <Typography variant="h6" gutterBottom>
-                          Degree
+                        LinkedIn
                         </Typography>
                         <Typography variant="body2" gutterBottom>
-                          B.COM
+                        www.linkedin.com/in/ranajay-saha/
                         </Typography>
                       </div>
                       <div className="infobx">
                         <Typography variant="h6" gutterBottom>
-                          Freelance
+                        GitHub
                         </Typography>
                         <Typography variant="body2" gutterBottom>
-                          Available
+                        https://github.com/jaysaha01
                         </Typography>
                       </div>
                     </div>

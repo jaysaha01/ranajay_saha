@@ -27,7 +27,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Skills", "Projects", "Blog", "Contact"];
+const navItems = ["Home", "About", "Skills", "Projects", "Contact"];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -45,7 +45,7 @@ export default function DrawerAppBar(props: Props) {
       <Divider />
       <List>
         {navItems.map((item,i) => (
-          <Link href={item == "Home" ? "/"+"#home" : item == "About" ? "/"+"#about" : item === "Skills" ?"/"+"#skills" : item =="Projects" ? "/"+"#projects" : item === "Blog" ? "/" + "#blogs" : item == "Contact" ? "/#contact" :"" } key={i+"infdfd"}>
+          <Link href={item == "Home" ? "/"+"#home" : item == "About" ? "/"+"#about" : item === "Skills" ?"/"+"#skills" : item =="Projects" ? "/"+"#projects" : item == "Contact" ? "/#contact" :"" } key={i+"infdfd"}>
             <ListItem  disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText primary={item} />
@@ -85,7 +85,7 @@ export default function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item,i) => (
-              <Link href={item == "Home" ? "/"+"#home" : item == "About" ? "/"+"#about" : item === "Skills" ?"/"+"#skills" : item =="Projects" ? "/"+"#projects" : item === "Blog" ? "/" + "#blogs" : item == "Contact" ? "/#contact" :"" } key={i+"infdfd"}>
+              <Link href={item == "Home" ? "/"+"#home" : item == "About" ? "/"+"#about" : item === "Skills" ?"/"+"#skills" : item =="Projects" ? "/"+"#projects" : item == "Contact" ? "/#contact" :"" } key={i+"infdfd"}>
                 <Button key={item} sx={{ color: "#fff" }}>
                   {item}
                 </Button>
